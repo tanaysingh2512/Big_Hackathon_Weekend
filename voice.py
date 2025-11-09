@@ -36,18 +36,21 @@ def run_conversation():
         callback_agent_response=on_agent_response,
         callback_user_transcript=on_user_transcript,
     )
-
-    conversation.start_session()     # open connection
-        # ⬅️ new: starts listening/talking loop
+    
+    # open connection
+    conversation.start_session()     
+    
+        # starts listening/talking loop
 
     print("🎧 Conversation started. Say 'goodbye' to end.")
 
     try:
         while True:
-            pass  # or time.sleep(0.1)
+            pass 
     except KeyboardInterrupt:
         print("\n🛑 Keyboard interrupt — closing session…")
         conversation.end_session()
 
 if __name__ == "__main__":
+
     run_conversation()
